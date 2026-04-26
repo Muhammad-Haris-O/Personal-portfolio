@@ -3,6 +3,7 @@ import { toast } from "sonner";
 import { useProfileLinks, formatHref, displayValue } from "@/hooks/useProfileLinks";
 import { ProfileSettings } from "./ProfileSettings";
 import { Settings } from "lucide-react";
+import contactPortrait from "@/assets/haris-contact.jpeg";
 
 export const Contact = () => {
   const [sending, setSending] = useState(false);
@@ -58,31 +59,54 @@ export const Contact = () => {
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-5">
-            <Field label="Name" name="name" placeholder="Your full name" required />
-            <Field label="Email" name="email" type="email" placeholder="you@company.com" required />
-            <Field label="Subject" name="subject" placeholder="What's this about?" required />
-            <div>
-              <label className="text-xs uppercase tracking-widest text-gold-soft mb-2 block">
-                Message
-              </label>
-              <textarea
-                name="message"
-                required
-                rows={5}
-                placeholder="Tell me about your project, idea, or invitation..."
-                className="w-full bg-transparent border-b border-cream/20 py-3 text-cream placeholder:text-cream/30 focus:outline-none focus:border-gold transition-colors resize-none"
-              />
+          <div className="space-y-10">
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-br from-gold/30 via-transparent to-transparent blur-2xl pointer-events-none" />
+              <div className="relative aspect-[4/5] overflow-hidden rounded-sm shadow-portrait">
+                <img
+                  src={contactPortrait}
+                  alt="Muhammad Haris portrait"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="text-[10px] uppercase tracking-[0.3em] text-gold-soft mb-2">
+                    Muhammad Haris
+                  </div>
+                  <div className="font-display text-2xl text-cream leading-tight">
+                    Let's build something <em className="text-gold not-italic italic">meaningful</em>.
+                  </div>
+                </div>
+              </div>
             </div>
-            <button
-              type="submit"
-              disabled={sending}
-              className="mt-4 inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gold text-ink text-sm font-semibold hover:bg-cream transition-colors disabled:opacity-60"
-            >
-              {sending ? "Sending..." : "Send message"}
-              <span aria-hidden>→</span>
-            </button>
-          </form>
+
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <Field label="Name" name="name" placeholder="Your full name" required />
+              <Field label="Email" name="email" type="email" placeholder="you@company.com" required />
+              <Field label="Subject" name="subject" placeholder="What's this about?" required />
+              <div>
+                <label className="text-xs uppercase tracking-widest text-gold-soft mb-2 block">
+                  Message
+                </label>
+                <textarea
+                  name="message"
+                  required
+                  rows={5}
+                  placeholder="Tell me about your project, idea, or invitation..."
+                  className="w-full bg-transparent border-b border-cream/20 py-3 text-cream placeholder:text-cream/30 focus:outline-none focus:border-gold transition-colors resize-none"
+                />
+              </div>
+              <button
+                type="submit"
+                disabled={sending}
+                className="mt-4 inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gold text-ink text-sm font-semibold hover:bg-cream transition-colors disabled:opacity-60"
+              >
+                {sending ? "Sending..." : "Send message"}
+                <span aria-hidden>→</span>
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </section>
