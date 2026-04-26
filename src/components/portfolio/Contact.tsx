@@ -3,6 +3,7 @@ import { toast } from "sonner";
 import { useProfileLinks, formatHref, displayValue } from "@/hooks/useProfileLinks";
 import { ProfileSettings } from "./ProfileSettings";
 import { Settings } from "lucide-react";
+import contactPortrait from "@/assets/haris-contact.jpeg";
 
 export const Contact = () => {
   const [sending, setSending] = useState(false);
