@@ -45,16 +45,17 @@ export const Hero = () => {
 
           <div className="md:col-span-5 relative animate-fade-in">
             <div className="relative aspect-square max-w-md mx-auto">
-              <div className="absolute -inset-4 bg-gradient-warm rounded-sm rotate-2" />
+              <div className="absolute -inset-6 bg-gradient-warm rounded-full blur-2xl opacity-70" />
+              <div className="absolute -inset-2 rounded-full bg-gradient-to-br from-accent/40 via-gold-soft/30 to-transparent" />
               <img
                 src={portrait}
                 alt="Muhammad Haris, lead software engineer"
-                className="relative w-full h-full object-cover object-center rounded-sm shadow-portrait"
+                className="relative w-full h-full object-cover object-center rounded-full shadow-portrait ring-4 ring-cream"
                 loading="eager"
               />
-              <div className="absolute -bottom-6 -left-6 bg-ink text-cream px-5 py-3 rounded-sm shadow-soft">
+              <div className="absolute -bottom-4 -left-2 md:-left-6 bg-ink text-cream px-5 py-3 rounded-full shadow-soft">
                 <div className="text-[10px] uppercase tracking-widest text-gold-soft">Currently</div>
-                <div className="text-sm font-medium">Open to new opportunities</div>
+                <div className="text-sm font-medium">Open to opportunities</div>
               </div>
             </div>
           </div>
