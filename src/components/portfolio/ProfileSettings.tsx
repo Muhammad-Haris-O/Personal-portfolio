@@ -64,7 +64,7 @@ export const ProfileSettings = ({ trigger }: Props) => {
       setErrors(fieldErrors);
       return;
     }
-    save(result.data);
+    save(result.data as ProfileLinks);
     toast.success("Profile links updated");
     setOpen(false);
   };

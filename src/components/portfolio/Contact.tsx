@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { toast } from "sonner";
+import { useProfileLinks, formatHref, displayValue } from "@/hooks/useProfileLinks";
+import { ProfileSettings } from "./ProfileSettings";
+import { Settings } from "lucide-react";
 
 export const Contact = () => {
   const [sending, setSending] = useState(false);
+  const { links } = useProfileLinks();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -32,10 +36,25 @@ export const Contact = () => {
             </p>
 
             <div className="mt-10 space-y-4">
-              <ContactRow label="Email" value="haris@example.com" href="mailto:haris@example.com" />
-              <ContactRow label="LinkedIn" value="/in/muhammadharis" href="#" />
-              <ContactRow label="GitHub" value="@mharis" href="#" />
+              <ContactRow label="Email" value={links.email} href={formatHref("email", links.email)} />
+              <ContactRow label="LinkedIn" value={displayValue("linkedin", links.linkedin)} href={formatHref("linkedin", links.linkedin)} />
+              <ContactRow label="GitHub" value={displayValue("github", links.github)} href={formatHref("github", links.github)} />
+              <ContactRow label="Twitter" value={displayValue("twitter", links.twitter)} href={formatHref("twitter", links.twitter)} />
               <ContactRow label="Based in" value="Karachi, Pakistan · Worldwide" />
+            </div>
+
+            <div className="mt-8">
+              <ProfileSettings
+                trigger={
+                  <button
+                    type="button"
+                    className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-gold-soft hover:text-gold transition-colors"
+                  >
+                    <Settings className="h-3.5 w-3.5" />
+                    Edit profile links
+                  </button>
+                }
+              />
             </div>
           </div>
 
