@@ -1,4 +1,4 @@
-import portrait from "@/assets/haris-portrait.jpeg";
+import portrait from "@/assets/haris-portrait.png";
 
 export const Hero = () => {
   return (
@@ -44,12 +44,12 @@ export const Hero = () => {
           </div>
 
           <div className="md:col-span-5 relative animate-fade-in">
-            <div className="relative aspect-[4/5] max-w-md mx-auto">
+            <div className="relative aspect-square max-w-md mx-auto">
               <div className="absolute -inset-4 bg-gradient-warm rounded-sm rotate-2" />
               <img
                 src={portrait}
                 alt="Muhammad Haris, lead software engineer"
-                className="relative w-full h-full object-cover rounded-sm shadow-portrait"
+                className="relative w-full h-full object-cover object-center rounded-sm shadow-portrait"
                 loading="eager"
               />
               <div className="absolute -bottom-6 -left-6 bg-ink text-cream px-5 py-3 rounded-sm shadow-soft">
